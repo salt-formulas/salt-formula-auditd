@@ -1,0 +1,6 @@
+salt-formula-auditd (0.1) xenial; urgency=low
+
+  * Initial release
+
+ -- Ivan Suzdal <mos-linux@mirantis.com>  Mon, 05 Feb 2018 18:00:17 +0300
+

@@ -1,4 +1,3 @@
 [gerrit]
-host=172.16.48.254
-port=29418
+host=gerrit.mcp.mirantis.net
 project=salt-formulas/auditd.git

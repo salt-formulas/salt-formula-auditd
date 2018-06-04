@@ -1,0 +1,15 @@
+Source: salt-formula-auditd
+Maintainer: MOS Linux Team <mos-linux@mirantis.com>
+Section: admin
+Priority: optional
+Build-Depends: debhelper (>= 9), python, python-yaml
+Standards-Version: 3.9.6
+Homepage: https://github.com/salt-formulas/salt-formula-auditd
+Vcs-Browser: https://github.com/salt-formulas/salt-formula-auditd
+Vcs-Git: https://github.com/salt-formulas/salt-formula-auditd.git
+
+Package: salt-formula-auditd
+Architecture: all
+Depends: ${misc:Depends}
+Description: auditd salt formula
+ Install and configure auditd.

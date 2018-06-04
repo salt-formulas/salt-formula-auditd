@@ -1,0 +1,25 @@
+{%- set service = salt['grains.filter_by']({
+    'Debian': {
+        'pkgs': ['auditd'],
+        'enabled': false,
+        'name': 'auditd',
+    },
+}, grain='os_family', merge=salt['pillar.get']('auditd:service')) %}
+
+{%- set audisp = salt['grains.filter_by']({
+    'Debian': {
+        'pkgs': ['audispd-plugins'],
+        'enabled': false,
+        'config_path': '/etc/audisp/plugins.d',
+    },
+}, grain='os_family', merge=salt['pillar.get']('auditd:audisp')) %}
+
+{%- set rules = salt['grains.filter_by']({
+    'default': {
+        'options': {
+            'bufsize': 8192,
+            'enabed': 0,
+        },
+        'rules': {},
+    },
+}, grain='os_family', merge=salt['pillar.get']('auditd:rules')) %}
