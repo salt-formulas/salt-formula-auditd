@@ -61,6 +61,25 @@ Single auditd service
             - '-w /etc/passwd -p wa'
             - '-a always,exit -F arch=b64 -S mount'
 
+Auditd service with syslog plugin configuration
+
+.. code-block:: yaml
+
+  auditd:
+    service:
+      enabled: true
+      log_format: NOLOG
+      ...
+    audisp:
+      enabled: true
+      plugins:
+        syslog:
+          active: 'yes'
+          direction: out
+          path: builtin_syslog
+          type: builtin
+          args: 'LOG_INFO LOG_LOCAL6'
+          format: string
 
 References
 =========
