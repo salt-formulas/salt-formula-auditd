@@ -13,6 +13,15 @@ used to discover violations of security policies used on your system.
 These violations can further be prevented by additional security
 measures such as SELinux.
 
+Please, be aware of one *feature*.
+If you enable auditd.rules.rules.privileged it will dynamically generate a list
+of binaries which have suid/sgid bit for all mounted file systems which do not
+have **nosuid** or **noexec** mount option (except the *special* file systems
+such as **sysfs**, **nsfs**, **cgroup**, **proc** and so one).
+It was done because it is nearly impossible to create that list manually. It
+always will differ from one installation to another.
+This behavior can not be changed but it can be extended manually by putting
+necessary rules into the **rule_list** list).
 
 
 Sample Metadata
