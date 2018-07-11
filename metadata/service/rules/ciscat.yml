@@ -5,6 +5,22 @@ classes:
 parameters:
   auditd:
     rules:
+      filter_fs:
+      - binfmt_misc
+      - cgroup
+      - debugfs
+      - devpts
+      - devtmpfs
+      - fusectl
+      - hugetlbfs
+      - mqueue
+      - nsfs
+      - proc
+      - pstore
+      - securityfs
+      - sysfs
+      filter_paths:
+      - /var/lib/docker
       options:
         enabled: 2
         bufsize: 8192

@@ -18,10 +18,17 @@ If you enable auditd.rules.rules.privileged it will dynamically generate a list
 of binaries which have suid/sgid bit for all mounted file systems which do not
 have **nosuid** or **noexec** mount option (except the *special* file systems
 such as **sysfs**, **nsfs**, **cgroup**, **proc** and so one).
+The list of such *special* file systems can be configured
+with auditd:rules:filter_fs pillar.
+
 It was done because it is nearly impossible to create that list manually. It
 always will differ from one installation to another.
 This behavior can not be changed but it can be extended manually by putting
-necessary rules into the **rule_list** list).
+necessary rules into the **rule_list** list.
+
+Also it is possible to add paths which will be filtered in search. It implements
+the idea of *white lists* but on a directory level, not for a particular file.
+It can be configured with auditd:rules:filter_paths pillar.
 
 
 Sample Metadata
