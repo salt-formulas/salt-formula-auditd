@@ -39,6 +39,8 @@ def _find_privileged_files(path, filtered=None, mounts=None):
             fpath = os.path.join(root, fname)
             if os.path.islink(fpath):
                 continue
+            if not os.path.exists(fpath):
+                continue
             mode = os.stat(fpath).st_mode
             if (mode & e_bits) and (mode & s_bits):
                 yield fpath
