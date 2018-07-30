@@ -71,7 +71,8 @@ Single auditd service
         enabled: 0
         bufsize: 8192
       rules:
-        some_rule_key:
+        1:
+          key: some_rule_key
           enabled: true
           rule_list:
             - '-w /etc/passwd -p wa'

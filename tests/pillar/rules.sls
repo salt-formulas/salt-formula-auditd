@@ -29,7 +29,8 @@ auditd:
       enabled: 0
       bufzise: 4096
     rules:
-      host_conf:
+      1:
+        key: host_conf
         enabled: true
         rule_list:
           - '-w /etc/host.conf -p wa'
