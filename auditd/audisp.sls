@@ -9,7 +9,7 @@ audisp_packages:
   pkg.installed:
     - names: {{ audisp.pkgs }}
 
-{%- for plugin, plugin_params in audisp.plugins.items() %}
+  {%- for plugin, plugin_params in audisp.plugins.items() %}
 {{ audisp.config_path }}/{{ plugin }}.conf:
   file.managed:
     - source: salt://auditd/files/audisp.plugin.conf
@@ -23,5 +23,5 @@ audisp_packages:
       - pkg: audisp_packages
     - watch_in:
       - service: auditd_service
-{%- endfor %}
+  {%- endfor %}
 {%- endif %}
