@@ -12,6 +12,9 @@ auditd_service:
     - name: {{ service.name }}
     - require:
       - pkg: auditd_packages
+    - retry:
+        attempts: 3
+        interval: 10
 
 /etc/audit/auditd.conf:
   file.managed:

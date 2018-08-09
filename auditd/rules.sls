@@ -12,8 +12,6 @@ include:
     - mode: 0640
     - require:
       - pkg: auditd_packages
-    - watch_in:
-      - service: auditd_service
 
 {%- if grains.get('virtual_subtype', None) not in ['Docker', 'LXC'] %}
 reload_rules:
